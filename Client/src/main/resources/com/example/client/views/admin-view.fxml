@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="742.0" prefWidth="1175.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.client.controllers.AdminController">
+    <TabPane fx:id="mainTabPane" layoutX="174.0" layoutY="95.0" prefHeight="647.0" prefWidth="1002.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="95.0">
+        <Tab fx:id="toursTab" text="toursView">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="674.0" prefWidth="974.0">
+                <TabPane layoutX="3.0" prefHeight="647.0" prefWidth="969.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                    <Tab text="Туры">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="516.0" prefWidth="900.0">
+                            <TableView fx:id="viewToursTab" layoutX="5.0" layoutY="54.0" prefHeight="613.0" prefWidth="835.0" AnchorPane.bottomAnchor="-53.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="54.0">
+                                <columns>
+                                    <TableColumn minWidth="0.0" prefWidth="120.00006103515625" text="ID" />
+                                    <TableColumn minWidth="0.0" prefWidth="120.00006103515625" text="Название" />
+                                    <TableColumn maxWidth="365.5999633789063" prefWidth="99.9999877929688" text="Тип" />
+                                    <TableColumn prefWidth="78.0" text="Код" />
+                                    <TableColumn prefWidth="127.99996566772461" text="Страна" />
+                                    <TableColumn prefWidth="116.80006408691406" text="Город" />
+                                    <TableColumn prefWidth="85.60005187988281" text="Цена" />
+                                    <TableColumn minWidth="0.0" prefWidth="117.0" text="Длитетельность" />
+                                    <TableColumn prefWidth="87.199951171875" text="Дата" />
+                                </columns>
+                            </TableView>
+                            <Button fx:id="addTourBtn" layoutX="228.0" layoutY="8.0" mnemonicParsing="false" onAction="#addTour" prefHeight="26.0" prefWidth="95.0" style="-fx-background-color: #eb3480;" text="Добавить" textFill="WHITE">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="toursViewBtn" alignment="CENTER" layoutX="14.0" layoutY="4.0" mnemonicParsing="false" onAction="#getToursView" prefHeight="36.0" prefWidth="96.0" style="-fx-background-color: #eb3480;" text="Список туров" textFill="WHITE" />
+                            <Button fx:id="deleteTourBtn" layoutX="350.0" layoutY="7.0" mnemonicParsing="false" onAction="#deleteTour" prefHeight="26.0" prefWidth="110.0" style="-fx-background-color: #eb3480;" text="Удалить" textFill="WHITE">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Button>
+                            <Line endX="-100.0" endY="15.000007629394531" layoutX="434.0" layoutY="19.0" startX="-100.0" startY="-6.400001525878906" />
+                            <TextField fx:id="deleteIdTourField" alignment="CENTER" layoutX="485.0" layoutY="7.0" prefHeight="26.0" prefWidth="158.0" promptText="Введите ID тура">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </TextField>
+                            <Label fx:id="errorTourDeleteId" alignment="CENTER" layoutX="673.0" layoutY="7.0" prefHeight="32.0" prefWidth="279.0" textFill="#ff0808">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Изменить">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <Button fx:id="editTourBtn" layoutX="333.0" layoutY="496.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="252.0" style="-fx-background-color: #eb3480;" text="Изменить" textFill="WHITE">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Button>
+                            <TextField fx:id="countryTourEditField" alignment="CENTER" layoutX="159.0" layoutY="239.0" prefHeight="35.0" prefWidth="300.0" promptText="Страна" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </TextField>
+                            <TextField fx:id="searchIdTourEditFiled" alignment="CENTER" layoutX="401.0" layoutY="39.0" prefHeight="35.0" prefWidth="300.0" promptText="ID тура" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="cityTourEditField" alignment="CENTER" layoutX="485.0" layoutY="239.0" prefHeight="35.0" prefWidth="300.0" promptText="Город" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="durationTourEditField" alignment="CENTER" layoutX="485.0" layoutY="299.0" prefHeight="35.0" prefWidth="300.0" promptText="Длительность" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="priceTourEditField" alignment="CENTER" layoutX="159.0" layoutY="299.0" prefHeight="35.0" prefWidth="300.0" promptText="Цена" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </TextField>
+                            <TextField fx:id="nameTourEditField" alignment="CENTER" layoutX="485.0" layoutY="354.0" prefHeight="35.0" prefWidth="300.0" promptText="Название тура" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <DatePicker fx:id="dateTourEditField" layoutX="485.0" layoutY="408.0" prefHeight="35.0" prefWidth="300.0" promptText="Дата" showWeekNumbers="true" />
+                            <Button fx:id="searchTourIdBtn" layoutX="226.0" layoutY="39.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="142.0" style="-fx-background-color: #eb3480;" text="Поиск" textFill="WHITE">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Button>
+                            <TextField fx:id="idTourEditFiled" alignment="CENTER" disable="true" layoutX="318.0" layoutY="159.0" prefHeight="35.0" prefWidth="300.0" promptText="ID тура" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="codeTourEditField" alignment="CENTER" disable="true" layoutX="159.0" layoutY="354.0" prefHeight="35.0" prefWidth="300.0" promptText="Код тура" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="typeTourEditField" alignment="CENTER" disable="true" layoutX="159.0" layoutY="408.0" prefHeight="35.0" prefWidth="300.0" promptText="Тип тура" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <Label fx:id="errorMsgEditTourLabel" alignment="CENTER" layoutX="213.0" layoutY="113.0" prefHeight="32.0" prefWidth="488.0" textFill="#ff0808">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Label>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+            </AnchorPane>
+        </Tab>
+        <Tab fx:id="usersTab" text="usersView">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="607.0" prefWidth="791.0">
+                <TabPane layoutX="-5.0" prefHeight="647.0" prefWidth="980.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <Tab text="Список пользователей ">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="491.0" prefWidth="706.0">
+                            <TableView fx:id="usersTableView" layoutX="8.0" layoutY="52.0" prefHeight="567.0" prefWidth="964.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="52.0">
+                                <columns>
+                                    <TableColumn prefWidth="91.20001220703125" text="Логин" />
+                                    <TableColumn prefWidth="131.19999408721924" text="ФИО" />
+                                    <TableColumn prefWidth="139.199951171875" text="Почта" />
+                                    <TableColumn minWidth="0.0" prefWidth="125.0" text="Код пользователя" />
+                                    <TableColumn prefWidth="129.0" text="Номер паспорта" />
+                                    <TableColumn prefWidth="173.0" text="Номер телефона" />
+                                    <TableColumn prefWidth="170.0" text="Статус суперпользователя" />
+                                </columns>
+                            </TableView>
+                            <Button fx:id="viewUsersBtn" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" style="-fx-background-color: #eb3480;" text="Просмотреть" textFill="WHITE" AnchorPane.leftAnchor="14.0" />
+                            <Button fx:id="deleteUsersBtn" layoutX="123.0" layoutY="15.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="70.0" style="-fx-background-color: #eb3480;" text="Удалить" textFill="WHITE" />
+                            <TextField fx:id="loginDeleteField" layoutX="242.0" layoutY="14.0" prefHeight="26.0" prefWidth="196.0" promptText="Логин" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="clientCodeDeleteField" layoutX="452.0" layoutY="14.0" prefHeight="26.0" prefWidth="228.0" promptText="Код клиента" style="-fx-background-color: #ffffff; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <Line endX="-141.20001220703125" endY="-32.0" layoutX="254.0" layoutY="44.0" startX="-141.20001220703125" startY="-1.0" />
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Изменить ползователя">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="579.0" prefWidth="849.0">
+                            <TextField fx:id="signUpSearchFIOField" layoutX="247.0" layoutY="50.0" prefHeight="32.0" prefWidth="228.0" promptText="ФИО" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="signUpSearchLoginField" layoutX="496.0" layoutY="50.0" prefHeight="32.0" prefWidth="211.0" promptText="Логин" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <Button fx:id="searchBtn" layoutX="98.0" layoutY="52.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="123.0" style="-fx-background-color: #eb3480;" text="Поиск" textFill="WHITE">
+                                <font>
+                                    <Font size="13.0" />
+                                </font>
+                            </Button>
+                            <ChoiceBox fx:id="signUpEditIsAdminField" layoutX="475.0" layoutY="320.0" prefHeight="38.0" prefWidth="350.0" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="signUpEditPasswordField" layoutX="98.0" layoutY="263.0" prefHeight="38.0" prefWidth="350.0" promptText="Пароль" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="signUpEditMailField" layoutX="474.0" layoutY="212.0" prefHeight="38.0" prefWidth="350.0" promptText="Почта" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="signUpEditFIOField" layoutX="98.0" layoutY="155.0" prefHeight="38.0" prefWidth="350.0" promptText="ФИО" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="signUpEditClientCodeField" layoutX="474.0" layoutY="155.0" prefHeight="38.0" prefWidth="351.0" promptText="Номер кода клиента" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="signUpEditPassportIdField" layoutX="98.0" layoutY="212.0" prefHeight="38.0" prefWidth="350.0" promptText="Номер поспорта " style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="signUpEditMobileNumberField" layoutX="98.0" layoutY="320.0" prefHeight="38.0" prefWidth="350.0" promptText="Номер телефона" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <TextField fx:id="signUpEditLoginField" layoutX="474.0" layoutY="263.0" prefHeight="38.0" prefWidth="350.0" promptText="Логин" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <Button fx:id="editBtn" layoutX="313.0" layoutY="386.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="298.0" style="-fx-background-color: #eb3480;" text="Изменить" textFill="WHITE" />
+                            <Label fx:id="errorSearchLabel" alignment="CENTER" layoutX="281.0" layoutY="98.0" prefHeight="28.0" prefWidth="434.0" />
+                            <Label fx:id="errorEditLabel" layoutX="290.0" layoutY="431.0" prefHeight="8.0" prefWidth="367.0" />
+                        </AnchorPane>
+                    </Tab>
+                    <Tab text="Добавить пользователя">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <Button fx:id="addUserBtn" layoutX="288.0" layoutY="515.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="255.0" style="-fx-background-color: #eb3480; -fx-background-radius: 5;" text="Добавить" textFill="WHITE">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Button>
+                            <ChoiceBox fx:id="signUpIsAdminField" layoutX="416.0" layoutY="445.0" prefHeight="38.0" prefWidth="249.0" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" AnchorPane.leftAnchor="416.0" AnchorPane.rightAnchor="131.19999999999993" />
+                            <TextField fx:id="signUpPasswordField" layoutX="416.0" layoutY="387.0" prefHeight="38.0" prefWidth="417.0" promptText="Пароль" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" AnchorPane.leftAnchor="416.0" AnchorPane.rightAnchor="131.19999999999993" />
+                            <TextField fx:id="signUpMailField" layoutX="416.0" layoutY="227.0" prefHeight="38.0" prefWidth="411.0" promptText="Почта" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" AnchorPane.leftAnchor="416.0" AnchorPane.rightAnchor="137.5999999999999" />
+                            <TextField fx:id="signUpFIOField" layoutX="416.0" layoutY="50.0" prefHeight="38.0" prefWidth="411.0" promptText="ФИО" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" AnchorPane.leftAnchor="416.0" AnchorPane.rightAnchor="137.5999999999999" />
+                            <TextField fx:id="signUpClientCodeField" layoutX="416.0" layoutY="112.0" prefHeight="38.0" prefWidth="411.0" promptText="Код клиента" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" AnchorPane.leftAnchor="416.0" AnchorPane.rightAnchor="137.5999999999999" />
+                            <TextField fx:id="signUpPassportIdField" layoutX="416.0" layoutY="169.0" prefHeight="38.0" prefWidth="410.0" promptText="Номер паспорта " style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" AnchorPane.leftAnchor="416.0" AnchorPane.rightAnchor="138.39999999999998" />
+                            <TextField fx:id="signUpMobileNumberField" layoutX="416.0" layoutY="279.0" prefHeight="38.0" prefWidth="410.0" promptText="Номер телефона" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" AnchorPane.leftAnchor="416.0" AnchorPane.rightAnchor="138.39999999999998" />
+                            <TextField fx:id="signUpLoginField" layoutX="416.0" layoutY="334.0" prefHeight="38.0" prefWidth="414.0" promptText="Логин" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" AnchorPane.leftAnchor="416.0" AnchorPane.rightAnchor="134.39999999999998" />
+                            <Label layoutX="158.0" layoutY="53.0" prefHeight="32.0" prefWidth="216.0" text="ФИО">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="161.0" layoutY="115.0" prefHeight="32.0" prefWidth="210.0" text="Код клиента" AnchorPane.leftAnchor="161.0">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="161.0" layoutY="172.0" prefHeight="32.0" prefWidth="210.0" text="Номер паспорта">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="161.0" layoutY="230.0" prefHeight="32.0" prefWidth="210.0" text="Почта">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="161.0" layoutY="282.0" prefHeight="32.0" prefWidth="210.0" text="Номер телефона">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="161.0" layoutY="337.0" prefHeight="32.0" prefWidth="210.0" text="Логин">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Label>
+                            <Label layoutX="161.0" layoutY="390.0" prefHeight="32.0" prefWidth="210.0" text="Пароль">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Label>
+                            <Label fx:id="outPutErrorAddUserLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="162.0" layoutY="14.0" prefHeight="28.0" prefWidth="678.0" textAlignment="CENTER">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Label>
+                            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="151.0" layoutY="450.0" prefHeight="28.0" prefWidth="235.0" text="Админ или Пользователь">
+                                <font>
+                                    <Font size="19.0" />
+                                </font>
+                            </Label>
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+                <Label fx:id="errorDeleteUserLabel" layoutX="654.0" layoutY="9.0" prefHeight="18.0" prefWidth="307.0" />
+            </AnchorPane>
+        </Tab>
+        <Tab fx:id="ticketsTab" text="ticketsView">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TabPane prefHeight="647.0" prefWidth="974.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="0.0">
+                    <Tab>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="393.0" prefWidth="974.0">
+                            <TableView fx:id="ticketTableView" layoutY="50.0" prefHeight="565.0" prefWidth="851.0" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="50.0">
+                                <columns>
+                                    <TableColumn prefWidth="50.0" text="ID" />
+                                    <TableColumn prefWidth="113.0" text="Код тура" />
+                                    <TableColumn prefWidth="119.0" text="Код клиента" />
+                                    <TableColumn prefWidth="157.0" text="Tранспорт" />
+                                    <TableColumn prefWidth="142.0" text="Вылет" />
+                                    <TableColumn prefWidth="173.0" text="Прилёт" />
+                                    <TableColumn prefWidth="218.0" text="Дата вылета" />
+                                </columns>
+                            </TableView>
+                            <Button fx:id="ticketsViewBtn" alignment="CENTER" layoutX="14.0" layoutY="11.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="212.0" style="-fx-background-color: #eb3480;" text="Список билетов" textFill="WHITE">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Button>
+                            <Button fx:id="ticketDeleteBtn" alignment="CENTER" layoutX="248.0" layoutY="11.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="212.0" style="-fx-background-color: #eb3480;" text="Удалить билет" textFill="WHITE">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Button>
+                            <Line endX="11.199996948242188" endY="31.799991607666016" layoutX="228.0" layoutY="12.0" startX="11.199996948242188" startY="2.999988555908203" />
+                            <TextField fx:id="ticketIdDeleteField" alignment="CENTER" layoutX="477.0" layoutY="12.0" prefHeight="34.0" prefWidth="219.0" promptText="Введите ID билета" style="-fx-background-color: #fafafa; -fx-border-color: silver; -fx-border-radius: 5;" />
+                            <Label fx:id="errorTicketDeleteLabel" layoutX="766.0" layoutY="16.0" prefHeight="26.0" prefWidth="198.0" textFill="RED" />
+                        </AnchorPane>
+                    </Tab>
+                </TabPane>
+            </AnchorPane>
+        </Tab>
+        <Tab fx:id="ordersTab" text="ordersView">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TableView fx:id="ordersTableView" layoutX="6.0" layoutY="3.0" prefHeight="640.0" prefWidth="498.0">
+                    <columns>
+                        <TableColumn prefWidth="107.20000916719437" text="ID" />
+                        <TableColumn prefWidth="203.0" text="Код клиента" />
+                        <TableColumn prefWidth="186.0" text="Код тура" />
+                    </columns>
+                </TableView>
+                <Button fx:id="checkAndCreateTicketBtn" alignment="CENTER" layoutX="570.0" layoutY="110.0" mnemonicParsing="false" onAction="#checkAndCreateTicket" prefHeight="27.0" prefWidth="282.0" style="-fx-background-color: #eb3480;" text="Подтвердить заказ и создать билет" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Line endX="304.39996337890625" layoutX="610.0" layoutY="158.0" startX="-100.0" />
+                <Line endX="304.39996337890625" layoutX="611.0" layoutY="236.0" startX="-100.0" />
+                <Line endX="304.39996337890625" layoutX="611.0" layoutY="91.0" startX="-100.0" />
+                <Button fx:id="searchOrderClientCodeBtn" layoutX="572.0" layoutY="180.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" style="-fx-background-color: #eb3480;" text="Поиск клиента" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="searchTourCodeField" layoutX="714.0" layoutY="255.0" prefHeight="30.0" prefWidth="150.0" promptText="Код тура">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="searchClientCodeField" layoutX="718.0" layoutY="180.0" prefHeight="30.0" prefWidth="142.0" promptText="Код клиента">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <Button fx:id="searchOrderTourCodeBtn" layoutX="571.0" layoutY="255.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="121.0" style="-fx-background-color: #eb3480;" text="Поиск тура" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Line endX="304.39996337890625" layoutX="609.0" layoutY="313.0" startX="-100.0" />
+                <TableView fx:id="tabViewOrdersSearch" layoutX="504.0" layoutY="325.0" prefHeight="287.0" prefWidth="419.0" AnchorPane.bottomAnchor="35.0" AnchorPane.topAnchor="325.0">
+                    <columns>
+                        <TableColumn prefWidth="49.999969482421875" text="ID" />
+                        <TableColumn prefWidth="167.0" text="Код клиента" />
+                        <TableColumn prefWidth="200.19997558593752" text="Код тура" />
+                    </columns>
+                </TableView>
+                <Label fx:id="errorOrderLabel" alignment="CENTER" layoutX="1.0" layoutY="211.0" prefHeight="27.0" prefWidth="350.0" textFill="RED">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Button fx:id="ordersViewBtn" layoutX="571.0" layoutY="36.0" mnemonicParsing="false" onAction="#getOrderView" prefHeight="30.0" prefWidth="180.0" style="-fx-background-color: #eb3480;" text="Список заказов" textFill="WHITE">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+    <AnchorPane layoutX="-1.0" prefHeight="742.0" prefWidth="206.0" style="-fx-background-color: #eb3480;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label alignment="CENTER" layoutX="23.0" layoutY="122.0" prefHeight="36.0" prefWidth="178.0" text="Admin Panel" textFill="WHITE">
+            <font>
+                <Font size="25.0" />
+            </font>
+        </Label>
+        <Button fx:id="toursBtn" layoutX="44.0" layoutY="204.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #f29305;" text="Туры" textFill="WHITE" />
+        <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="26.0" layoutY="200.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../images/tours-menu-icon.png" />
+        </ImageView>
+        <Button fx:id="ticketBtn" layoutX="43.0" layoutY="315.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="138.0" style="-fx-background-color: #f29305;" text="Билеты" textFill="WHITE" />
+        <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="26.0" layoutY="311.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../images/tickets-menu-icon.png" />
+        </ImageView>
+        <Button fx:id="usersBtn" layoutX="44.0" layoutY="258.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="137.0" style="-fx-background-color: #f29305;" text="Пользователи" textFill="WHITE" />
+        <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="26.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../images/user-profile-menu-icon.png" />
+        </ImageView>
+        <Button fx:id="orderBtn" layoutX="43.0" layoutY="371.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="138.0" style="-fx-background-color: #f29305;" text="Заказы" textFill="WHITE" />
+        <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="26.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../images/orders-menu-icon.png" />
+        </ImageView>
+        <ImageView fitHeight="96.0" fitWidth="143.0" layoutX="59.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@../images/map-icon.png" />
+        </ImageView>
+        <Button fx:id="closeBtn" layoutX="38.0" layoutY="632.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="138.0" style="-fx-background-color: #f29305;" text="Выйти" textFill="WHITE" />
+    </AnchorPane>
+    <AnchorPane layoutX="203.0" prefHeight="49.0" prefWidth="972.0" style="-fx-background-color: #eb3480;" AnchorPane.leftAnchor="203.0" AnchorPane.rightAnchor="0.0">
+        <Label fx:id="activeMenuLabel" alignment="CENTER" layoutX="318.0" layoutY="7.0" prefHeight="27.0" prefWidth="222.0" text="Туры" textFill="WHITE" AnchorPane.leftAnchor="318.0" AnchorPane.rightAnchor="318.0">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+    </AnchorPane>
+</AnchorPane>
